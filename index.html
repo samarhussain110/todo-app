@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <p class="eyebrow">Productive by design</p>
+          <h1>Task Manager</h1>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-button" type="button" aria-pressed="false" aria-label="Toggle light and dark mode">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-label">Light Mode</span>
+        </button>
+      </div>
+      <p class="subtitle">A polished dark-mode to-do app with fast, responsive interactions.</p>
+    </header>
+
+    <section class="task-input-panel">
+      <form id="task-form" class="task-form" autocomplete="off">
+        <label class="sr-only" for="task-input">Add a new task</label>
+        <input id="task-input" type="text" placeholder="Add a new task" aria-label="Add a new task" />
+        <button type="submit" id="add-button" class="primary-button">Add</button>
+      </form>
+      <div class="filter-bar">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="active">Active</button>
+        <button class="filter-button" data-filter="completed">Completed</button>
+      </div>
+    </section>
+
+    <main class="task-list-shell">
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <div class="empty-state" id="empty-state">No tasks yet. Add your first task to begin.</div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
